@@ -369,8 +369,9 @@
         
         // --- A（壁を背にする側）の配置とポーズ ---
         personA.position.set(0, 0, personA.userData.depth * 0.5);
-        personA.arms[0].rotation.set(0.05, 0, -0.05); 
-        personA.arms[1].rotation.set(0.05, 0, 0.05);  
+        // Aの腕が後ろに引けないようにX軸の傾きを0（まっすぐ下ろす）に設定
+        personA.arms[0].rotation.set(0, 0, -0.05); 
+        personA.arms[1].rotation.set(0, 0, 0.05);  
 
         // --- B（壁ドンする側）の配置とポーズ ---
         personB.rotation.y = Math.PI;
